@@ -1,7 +1,8 @@
-package com.victolee.signuplogin.controller;
+package com.Yongjun.Rolling_paper.controller;
 
-import com.victolee.signuplogin.dto.MemberDto;
-import com.victolee.signuplogin.service.MemberService;
+
+import com.Yongjun.Rolling_paper.dto.MemberDto;
+import com.Yongjun.Rolling_paper.service.MemberService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.victolee.signuplogin.domain;
+package com.Yongjun.Rolling_paper.domain;
 
         import lombok.AllArgsConstructor;
         import lombok.Getter;

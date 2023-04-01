@@ -1,6 +1,7 @@
-package com.victolee.signuplogin.dto;
+package com.Yongjun.Rolling_paper.dto;
 
-import com.victolee.signuplogin.domain.entity.MemberEntity;
+
+import com.Yongjun.Rolling_paper.domain.entity.MemberEntity;
 import lombok.*;
 
 import java.time.LocalDateTime;

@@ -1,9 +1,10 @@
-package com.victolee.signuplogin.service;
+package com.Yongjun.Rolling_paper.service;
 
-import com.victolee.signuplogin.domain.Role;
-import com.victolee.signuplogin.domain.entity.MemberEntity;
-import com.victolee.signuplogin.domain.repository.MemberRepository;
-import com.victolee.signuplogin.dto.MemberDto;
+
+import com.Yongjun.Rolling_paper.domain.Role;
+import com.Yongjun.Rolling_paper.domain.entity.MemberEntity;
+import com.Yongjun.Rolling_paper.domain.repository.MemberRepository;
+import com.Yongjun.Rolling_paper.dto.MemberDto;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
