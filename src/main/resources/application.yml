@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url:  jdbc:h2:tcp://localhost/~/test;MODE=MySQL
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+
+  jpa:
+    hibernate:
+      ddl-auto: create #none을 하면 데이터가 유지가 된다.
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+logging:
+  level:
+    org.hibernate.sql: debug # hibernate가 생성하는 모든 sql이 log로 보인다.
+#    org.hibernate.type: trace  # p6spy를 사용하면 굳이 사용할 필요가 없다.

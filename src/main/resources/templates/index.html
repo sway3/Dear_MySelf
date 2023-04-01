@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/index.css">
+
+    <title>마이 엔딩 크레딧</title>
+</head>
+<body>
+    <div class="container">
+        <div class="text-container">
+            <div class="welcome-message">친구들의 편지로<br>당신만의 엔딩 크레딧을 채워보세요!</div>
+            <div class="small-container">
+<!--                <a href="../../../../../../Rolling_paper/Front_repo/login.html"><div class="get-started">시작하기</div></a>-->
+                <a sec:authorize="isAnonymous()" th:href="@{/user/login}"><div class="get-started">로그인</div></a>
+                <a sec:authorize="isAnonymous()" th:href="@{/user/signup}"><div class="get-started">회원가입</div></a>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>메인</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>메인 페이지</h1>-->
+<!--<hr>-->
+<!--<a sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a>-->
+<!--<a sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>-->
+<!--<a sec:authorize="isAnonymous()" th:href="@{/user/signup}">회원가입</a>-->
+<!--<a sec:authorize="hasRole('ROLE_MEMBER')" th:href="@{/user/info}">내정보</a>-->
+<!--<a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/admin}">어드민</a>-->
+<!--</body>-->
+<!--</html>-->
