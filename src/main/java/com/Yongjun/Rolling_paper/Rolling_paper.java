@@ -8,6 +8,6 @@ public class Rolling_paper {
 
     public static void main(String[] args) {
         SpringApplication.run(Rolling_paper.class, args);
-    }
 
+    }
 }
