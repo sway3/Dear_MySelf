@@ -25,7 +25,7 @@
 
 <!--    <input type="password" name="password" placeholder="비밀번호">-->
     <input type="text" th:field="*{password}" class="form-control"
-           placeholder="이메일 입력하세요"
+           placeholder="비밀번호 입력해주세요"
            th:class="${#fields.hasErrors('password')}? 'form-control fieldError' : 'form-control'">
     <p th:if="${#fields.hasErrors('password')}"
        th:errors="*{password}">Incorrect date</p>
