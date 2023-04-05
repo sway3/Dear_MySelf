@@ -4,14 +4,16 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
+@Slf4j
 @Table(name = "Rolling_paper_member")
 public class MemberEntity {
     @Id
@@ -27,16 +29,16 @@ public class MemberEntity {
     @Column(name = "user_name")
     private String name;
 
-    @Column(name = "birth_day")
-    private Date date;
+    @Column(name = "phone_number")
+    private String phone_number;
 
     @Builder
-    public MemberEntity(Long id, String email, String password, String name, Date date) {
+    public MemberEntity(Long id, String email, String password, String name, String phone_number) {
 
         this.id = id;
         this.email = email;
         this.password = password;
         this.name = name;
-        this.date = date;
+        this.phone_number = phone_number;
     }
 }

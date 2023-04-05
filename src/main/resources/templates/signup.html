@@ -24,13 +24,13 @@
        th:errors="*{email}">Incorrect date</p>
 
 <!--    <input type="password" name="password" placeholder="비밀번호">-->
-    <input type="text" th:field="*{password}" class="form-control"
+    <input type="password" th:field="*{password}" class="form-control"
            placeholder="비밀번호 입력해주세요"
            th:class="${#fields.hasErrors('password')}? 'form-control fieldError' : 'form-control'">
     <p th:if="${#fields.hasErrors('password')}"
        th:errors="*{password}">Incorrect date</p>
     <input type="text" name="name" placeholder="이름">
-    <input type="date" name="day" id="birthday">
+    <input type="text" name="phone_number" id="birthday" placeholder="010-1111-1111">
 
     <button type="submit">가입하기</button>
 </form>

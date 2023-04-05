@@ -5,8 +5,8 @@ import com.Yongjun.Rolling_paper.domain.entity.MemberEntity;
 import lombok.*;
 
 import javax.validation.constraints.NotEmpty;
+import java.sql.Date;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Getter
 @Setter
@@ -19,9 +19,8 @@ public class MemberDto {
     @NotEmpty(message = "비밀번호 입력은 필수입니다.")
     private String password;
     private String name;
-    private Date date;
-//    private LocalDateTime createdDate;
-//    private LocalDateTime modifiedDate;
+    private String phone_number;
+
 
     public MemberEntity toEntity(){
         return MemberEntity.builder()
@@ -29,16 +28,16 @@ public class MemberDto {
                 .email(email)
                 .password(password)
                 .name(name)
-                .date(date)
+                .phone_number(phone_number)
                 .build();
     }
 
     @Builder
-    public MemberDto(Long id, String email, String password, String name, Date date) {
+    public MemberDto(Long id, String email, String password, String name, String phone_number) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.name = name;
-        this.date = date;
+        this.phone_number = phone_number;
     }
 }
