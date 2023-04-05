@@ -3,11 +3,23 @@ package com.Yongjun.Rolling_paper.controller;
 
 import com.Yongjun.Rolling_paper.dto.MemberDto;
 import com.Yongjun.Rolling_paper.service.MemberService;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.json.simple.parser.JSONParser;
+import org.springframework.boot.json.JsonParseException;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.validation.Valid;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @AllArgsConstructor
@@ -23,17 +35,23 @@ public class MemberController {
 
     // 회원가입 페이지
     @GetMapping("/user/signup")
-    public String dispSignup() {
+    public String dispSignup(Model model) {
         log.info("회원가입");
+        model.addAttribute("memberDto", new MemberDto());
+
         return "/signup";
     }
 
     // 회원가입 처리
     @PostMapping("/user/signup")
-    public String execSignup(MemberDto memberDto) {
+    public String execSignup(@Valid MemberDto memberDto, BindingResult result) {
+        if (result.hasErrors()) {
+            log.info("틀렸습니다.");
+            return "/signup";
+        }
         memberService.joinUser(memberDto);
 
-        return "redirect:/user/login";
+        return "redirect:/";
     }
 
     // 로그인 페이지
