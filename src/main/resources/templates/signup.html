@@ -1,19 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>회원가입 페이지</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/signup.css">
+
+    <title>마이 엔딩 크레딧</title>
 </head>
 <body>
-<h1>회원 가입</h1>
-<hr>
 
-<form action="/user/signup" method="post">
-    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+    <div class="signup-container">
 
-    <input type="email" name="email" placeholder="이메일 입력해주세요">
-    <input type="password" name="password" placeholder="비밀번호">
-    <button type="submit">가입하기</button>
-</form>
+        <h1>회원가입</h1>
+
+        <form id="form">
+            <label for="id">아이디</label>
+            <input type="text" id="id" placeholder="ID">
+
+            <label for="id">비밀번호</label>
+            <input type="password" id="password" placeholder="password">
+            
+            <label for="id">이름</label>
+            <input type="text" id="name" placeholder="이름">
+
+            <label for="id">이메일</label>
+            <input type="email" id="email" placeholder="abc@abc.com">
+            
+            <label for="id">생년월일</label>
+            <input type="date" id="birthday">
+
+            <button id="signup">가입하기</button>
+        </form>
+    </div>
+    
 </body>
 </html>

@@ -5,3 +5,36 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.signup-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+}
+
+#form > label {
+    margin-bottom: 5px;
+}
+
+#form > #id, #password, #name, #birthday, #signup {
+    width: 300px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+#form > #signup {
+    color: #fff;
+    background-color: #708090;
+    border-style: none;
+    padding: 15px;
+}
