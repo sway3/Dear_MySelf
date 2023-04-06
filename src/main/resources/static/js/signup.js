@@ -1,9 +1,18 @@
-const id = document.getElementById('id');
-const password = document.getElementById('password');
-const fname = document.getElementById('name');
-const bday = document.getElementById('birthday');
-const form = document.getElementById('form');
-const email = document.getElementById('email');
+function showPassword() {
+    let password = document.getElementById('password');
+    if (password.type === 'password') {
+        password.type = 'text';
+    } else {
+        password.type = 'password';
+    }
+}
+
+// const id = document.getElementById('id');
+// const password = document.getElementById('password');
+// const fname = document.getElementById('name');
+// const bday = document.getElementById('birthday');
+// const form = document.getElementById('form');
+// const email = document.getElementById('email');
 
 
 // form.addEventListener('submit', (e) => {

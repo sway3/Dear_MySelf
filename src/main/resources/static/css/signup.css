@@ -6,6 +6,16 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'NanumSquareRound';
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, input, button {
+    font-family: 'GmarketSansMedium';
+}
+
 .signup-container {
     position: absolute;
     top: 50%;
@@ -24,17 +34,44 @@ h1 {
 
 #form > label {
     margin-bottom: 5px;
+    margin-top: 5px;
 }
 
-#form > #id, #password, #name, #birthday, #signup {
+#form > #id, #password, #name, #phone{
     width: 300px;
-    margin-bottom: 15px;
     padding: 10px;
+    margin-bottom: 5px;
 }
 
 #form > #signup {
-    color: #fff;
-    background-color: #708090;
+    font-size: 16px;
+    margin-top: 10px;
     border-style: none;
-    padding: 15px;
+    border: 5px solid #5a5a5a;
+    border-radius: 4px;
+    color: #fff;
+    background-color:#5C5CFF;
+    border-style: none;
+    padding: 13px;
+}
+
+#form > .pwd-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+#showPassword {
+    width: 12px;
+    height: 12px;
+}
+
+.error {
+    width: fit-content;
+    font-size: 13px;
+    color: #bd2130;
+}
+
+.fieldError {
+    border-color: #bd2130;
 }
