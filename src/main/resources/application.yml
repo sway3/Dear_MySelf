@@ -21,4 +21,7 @@ server:
   address: 127.0.0.4
   compression:
     enabled: true
-  port: 1234
+#  port: 1234
+
+file:
+  js: "src/main/resources/static/js/signup.js"

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- writePost.html -->
+<form method="post" action="/savePost">
+  <input type="hidden" name="link" th:value="${link}" />
+  <!-- 글 작성 폼 입력 필드 -->
+  <button type="submit">글 작성 완료</button>
+</form>
+</body>
+</html>
