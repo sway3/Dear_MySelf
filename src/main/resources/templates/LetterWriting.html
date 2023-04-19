@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Letter Writing</title>
+</head>
+<body>
+<h1>Write a Letter</h1>
+<form th:action="@{/letter}" th:object="${letterDto}" method="post">
+  <div>
+    <label for="paper">Select paper:</label>
+    <select id="paper" name="paper" th:field="*{paper}">
+      <option value="plain">Plain</option>
+      <option value="lined">Lined</option>
+      <option value="checked">Checked</option>
+    </select>
+  </div>
+  <div>
+    <label for="font">Select font:</label>
+    <select id="font" name="font" th:field="*{font}">
+      <option value="serif">Serif</option>
+      <option value="sans-serif">Sans-serif</option>
+      <option value="monospace">Monospace</option>
+    </select>
+  </div>
+  <div>
+    <label for="content">Content:</label>
+    <textarea id="content" name="content" th:field="*{content}" rows="10"></textarea>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+</body>
+</html>

@@ -1,5 +1,6 @@
 package com.Yongjun.Rolling_paper.domain.entity;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,24 +10,21 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Table(name = "Letter")
-public class MyHotel {
+public class LetterEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String link;
-
-    @Column(nullable = false)
     private String content;
 
-    // default constructor
-    public MyHotel() {}
+    @Column(nullable = false)
+    private String font;
 
-    // constructor with parameters
-    public MyHotel(String link, String content) {
-        this.link = link;
-        this.content = content;
-    }
+    @Column(nullable = false)
+    private String paper;
 
+
+
+    // Getters and setters
 }
