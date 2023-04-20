@@ -14,11 +14,16 @@ import java.sql.Date;
 @Getter
 @Entity
 @Slf4j
+
 @Table(name = "Rolling_paper_member")
 public class MemberEntity {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "LetterId")
+    private LetterEntity letterEntity;
 
     @Column(length = 20, nullable = false)
     private String email;
