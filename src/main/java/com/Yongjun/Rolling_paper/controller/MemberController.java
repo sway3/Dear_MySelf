@@ -5,6 +5,7 @@ import com.Yongjun.Rolling_paper.dto.MemberDto;
 import com.Yongjun.Rolling_paper.service.MemberService;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import javassist.bytecode.DuplicateMemberException;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.json.simple.parser.JSONParser;
@@ -65,7 +66,7 @@ public class MemberController {
 
     // 회원가입 처리
     @PostMapping("/user/signup")
-    public String execSignup(@Valid MemberDto memberDto, BindingResult result) {
+    public String execSignup(@Valid MemberDto memberDto, BindingResult result) throws DuplicateMemberException {
         if (result.hasErrors()) {
             log.info("틀렸습니다.");
             return "/signup";

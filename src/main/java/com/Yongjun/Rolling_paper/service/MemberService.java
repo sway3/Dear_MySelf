@@ -5,6 +5,7 @@ import com.Yongjun.Rolling_paper.domain.Role;
 import com.Yongjun.Rolling_paper.domain.entity.MemberEntity;
 import com.Yongjun.Rolling_paper.domain.repository.MemberRepository;
 import com.Yongjun.Rolling_paper.dto.MemberDto;
+import javassist.bytecode.DuplicateMemberException;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -31,17 +32,20 @@ public class MemberService implements UserDetailsService {
     private final MemberRepository memberRepository;
 
 
+
     @Transactional
-    public Long joinUser(MemberDto memberDto) {
+    public Long joinUser(MemberDto memberDto) throws DuplicateMemberException {
+        if (memberRepository.findByEmail(memberDto.getEmail()).isPresent()) {
+            throw new DuplicateMemberException("이미 가입된 이메일입니다.");
+        }
         // 비밀번호 암호화
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        log.info("123");
         memberDto.setPassword(passwordEncoder.encode(memberDto.getPassword()));
-        log.info("1234567");
-
 
         return memberRepository.save(memberDto.toEntity()).getId();
     }
+
+
 
     @Override
     public UserDetails loadUserByUsername(String userEmail) throws UsernameNotFoundException {

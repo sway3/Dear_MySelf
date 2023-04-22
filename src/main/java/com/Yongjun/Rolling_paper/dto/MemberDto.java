@@ -4,6 +4,7 @@ package com.Yongjun.Rolling_paper.dto;
 import com.Yongjun.Rolling_paper.domain.entity.MemberEntity;
 import lombok.*;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import java.sql.Date;
 import java.time.LocalDateTime;
@@ -15,6 +16,7 @@ import java.time.LocalDateTime;
 public class MemberDto {
     private Long id;
     @NotEmpty(message = "이메일 입력은 필수입니다.")
+    @Email(message = "올바른 이메일 형식이 아닙니다.")
     private String email;
     @NotEmpty(message = "비밀번호 입력은 필수입니다.")
     private String password;

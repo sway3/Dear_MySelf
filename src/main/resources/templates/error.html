@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Error</title>
+</head>
+<body>
+<a th:href="@{/user/signup}"><div class="get-started">회원가입</div></a>
+<h1>Error</h1>
+<p th:text="${errorMsg}"></p>
+</body>
+</html>
