@@ -8,4 +8,4 @@
 ---
 
 1. Thymeleaf말고 Fetch로 프론트와 통신해보기
-2. SNS Open API로 회원가입 및 로그인 구현해보기
+2. SNS Open API로 회원가입 및 로그인 구현해보기 

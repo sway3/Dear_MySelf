@@ -39,7 +39,7 @@ public class MemberService implements UserDetailsService {
         log.info("1234567");
 
 
-        return memberRepository.save(memberDto.toEntity()).getId();
+        return memberRepository.save(memberDto.                                             toEntity()).getId();
     }
 
     @Override

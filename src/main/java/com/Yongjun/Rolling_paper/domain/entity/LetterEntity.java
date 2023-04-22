@@ -10,13 +10,15 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@Table(name = "Letter")
+@Table(name = "Letter_Entity")
 public class LetterEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "LetterId")
     private Long id;
 
+    @OneToOne(mappedBy = "letterEntity", fetch = FetchType.LAZY)
+    private MemberEntity memberEntity;
 
     @Column(nullable = false)
     private String title;
