@@ -13,15 +13,26 @@
 <div class="container">
     <div class="text-container">
         <div class="welcome-message">친구들의 편지로<br>당신만의 엔딩 크레딧을 채워보세요!</div>
-        <div class="small-container">
-            <!--                <a href="../../../../../../Rolling_paper/Front_repo/login.html"><div class="get-started">시작하기</div></a>-->
-            <a th:href="@{/user/login}"><div class="get-started">로그인</div></a>
-            <a th:href="@{/user/signup}"><div class="get-started">회원가입</div></a>
-            <a th:href="@{/letter/write}"><div class="get-started">편지 작성</div></a>
+        <!-- 로그인되어 있을 때 -->
+        <div th:if="${loggedIn}">
+            <div class="user-info">
+                <span th:text="${username} + ' 님'"></span>
+                <a th:href="@{/logout}"><div class="get-started">로그아웃</div></a>
+                <a th:href="@{/letter/write}"><div class="get-started">편지 작성</div></a>
+                <a th:href="@{/letter/letters}"><div class="get-started">편지 리스트</div></a>
 
+            </div>
+        </div>
 
+        <!-- 로그인되어 있지 않을 때 -->
+        <div th:if="${not loggedIn}">
+            <div class="small-container">
+                <a th:href="@{/user/login}"><div class="get-started">로그인</div></a>
+                <a th:href="@{/user/signup}"><div class="get-started">회원가입</div></a>
+                <a th:href="@{/letter/write}"><div class="get-started">편지 작성</div></a>
+            </div>
+        </div>
             <!--            <a th:href="@{/post/{link}(link=${randomLink})}">내 글 보러가기</a>-->
-
         </div>
     </div>
 </div>

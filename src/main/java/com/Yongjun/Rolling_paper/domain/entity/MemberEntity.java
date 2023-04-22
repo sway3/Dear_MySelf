@@ -9,6 +9,8 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
@@ -21,9 +23,8 @@ public class MemberEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "LetterId")
-    private LetterEntity letterEntity;
+//    @OneToMany(mappedBy = "memberEntity", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<LetterEntity> letters = new ArrayList<>();
 
     @Column(length = 20, nullable = false)
     private String email;
