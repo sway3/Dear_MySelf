@@ -13,13 +13,13 @@ import javax.persistence.*;
 @Table(name = "Letter_Entity")
 public class LetterEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     @Column(name = "LetterId")
     private Long id;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "MemberId")
-//    private MemberEntity memberEntity;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_name")
+    private MemberEntity memberEntity;
 
 
     @Column(nullable = false)

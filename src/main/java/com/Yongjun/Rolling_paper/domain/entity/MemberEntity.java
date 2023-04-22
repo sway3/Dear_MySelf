@@ -20,11 +20,11 @@ import java.util.List;
 @Table(name = "Rolling_paper_member")
 public class MemberEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
+    @Column(name = "MemberId")
     private Long id;
 
-//    @OneToMany(mappedBy = "memberEntity", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private List<LetterEntity> letters = new ArrayList<>();
+
 
     @Column(length = 20, nullable = false)
     private String email;
