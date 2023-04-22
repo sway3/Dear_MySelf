@@ -9,6 +9,8 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.json.simple.parser.JSONParser;
 import org.springframework.boot.json.JsonParseException;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,7 +19,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.List;
 import java.util.Map;
 
@@ -27,18 +31,35 @@ import java.util.Map;
 public class MemberController {
     private MemberService memberService;
 
+
     // 메인 페이지
+//    @GetMapping("/")
+//    public String index() {
+//        return "/index";
+//    }
     @GetMapping("/")
-    public String index() {
+    public String home(Model model, HttpServletRequest request) {
+        // 세션에서 사용자 정보를 가져옵니다.
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        // 사용자가 로그인되어 있지 않으면 로그인 버튼을 표시합니다.
+        if (principal instanceof String) {
+            model.addAttribute("loggedIn", false);
+        }
+        // 사용자가 로그인되어 있으면 사용자 정보와 로그아웃 버튼을 표시합니다.
+        else if (principal instanceof UserDetails) {
+            String username = ((UserDetails) principal).getUsername();
+            model.addAttribute("loggedIn", true);
+            model.addAttribute("username", username);
+        }
+
         return "/index";
     }
 
     // 회원가입 페이지
     @GetMapping("/user/signup")
     public String dispSignup(Model model) {
-        log.info("회원가입");
         model.addAttribute("memberDto", new MemberDto());
-
         return "/signup";
     }
 
@@ -53,6 +74,16 @@ public class MemberController {
 
         return "redirect:/";
     }
+    // 로그아웃 처리
+    @GetMapping("/logout")
+    public String execLogout(HttpServletRequest request) {
+        // SecurityContext를 가져와서 인증 정보를 삭제합니다.
+        SecurityContextHolder.clearContext();
+        // 세션을 무효화합니다.
+        request.getSession().invalidate();
+        // 로그인 페이지로 리다이렉트합니다.
+        return "redirect:/";
+    }
 
     // 로그인 페이지
     @GetMapping("/user/login")
@@ -63,7 +94,7 @@ public class MemberController {
     // 로그인 결과 페이지
     @GetMapping("/user/login/result")
     public String dispLoginResult() {
-        return "/loginSuccess";
+        return "redirect:/";
     }
 
     // 로그아웃 결과 페이지
@@ -79,10 +110,10 @@ public class MemberController {
     }
 
     // 내 정보 페이지
-    @GetMapping("/user/info")
-    public String dispMyInfo() {
-        return "/myinfo";
-    }
+//    @GetMapping("/user/info")
+//    public String dispMyInfo() {
+//        return "/myinfo";
+//    }
 
     // 어드민 페이지
     @GetMapping("/admin")

@@ -1,0 +1,30 @@
+<!-- letters.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Letters</title>
+</head>
+<body>
+<h1>Letters</h1>
+<table>
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Font</th>
+    <th>Paper</th>
+    <th>Writer</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="letter : ${letters}">
+    <td th:text="${letter.title}"></td>
+    <td th:text="${letter.content}"></td>
+    <td th:text="${letter.font}"></td>
+    <td th:text="${letter.paper}"></td>
+    <td th:text="${letter.writer}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

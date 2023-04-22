@@ -8,7 +8,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create #none을 하면 데이터가 유지가 된다.
+      ddl-auto: update #none을 하면 데이터가 유지가 된다.
     properties:
       hibernate:
         show_sql: true

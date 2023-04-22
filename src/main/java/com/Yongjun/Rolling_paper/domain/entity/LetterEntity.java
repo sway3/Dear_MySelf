@@ -17,8 +17,10 @@ public class LetterEntity {
     @Column(name = "LetterId")
     private Long id;
 
-    @OneToOne(mappedBy = "letterEntity", fetch = FetchType.LAZY)
-    private MemberEntity memberEntity;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "MemberId")
+//    private MemberEntity memberEntity;
+
 
     @Column(nullable = false)
     private String title;

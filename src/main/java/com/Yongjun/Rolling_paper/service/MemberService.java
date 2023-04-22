@@ -19,6 +19,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -39,7 +40,7 @@ public class MemberService implements UserDetailsService {
         log.info("1234567");
 
 
-        return memberRepository.save(memberDto.                                             toEntity()).getId();
+        return memberRepository.save(memberDto.toEntity()).getId();
     }
 
     @Override
