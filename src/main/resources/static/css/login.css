@@ -1,4 +1,5 @@
-@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+@import url('https://fonts.googleapis.com/css?family=Parisienne');
+@import url('https://fonts.googleapis.com/earlyaccess/nanumgothic.css');
 
 *,
 *::before,
@@ -8,14 +9,24 @@
     box-sizing: border-box;
 }
 
-@font-face {
-    font-family: 'NanumSquareRound';
-    font-weight: normal;
-    font-style: normal;
+body {
+    background-image: url(/img/plain.jpg);
 }
 
 body, input, button {
-    font-family: 'GmarketSansMedium';
+    font-family: 'Nanum Gothic';
+}
+
+a {
+    text-decoration: none;
+}
+
+.welcome-message {
+    font-family: 'Parisienne';
+    font-size: 4rem;
+    font-weight: 900;
+    color: #000;
+    margin: 20px 0 0 30px;
 }
 
 .login-container {
@@ -38,7 +49,7 @@ h1 {
 #form > #id, #password, #login {
     margin-bottom: 15px;
     padding: 10px;
-    width: 300px;
+    width: 280px;
     height: 45px;
 }
 
@@ -49,7 +60,7 @@ h1 {
 }
 
 #form > #password {
-    margin-bottom: 35px;
+    margin: 0 0 35px 0;
 }
 
 #form > label {
@@ -59,23 +70,63 @@ h1 {
 
 #login {
     font-size: 16px;
-    border-style: none; 
-    border: 5px solid #5a5a5a;
+    font-weight: bold;
+    border: 1px solid #000;
     border-radius: 4px;
-    color: #fff;
-    background-color:#5C5CFF;
-    border-style: none;
+    color: #000;
+    background-color: #D3D3D3;
     padding: 13px;
+}
+
+#login:hover {
+    color: #fff;
+    background-color: #000;
+    transition: 0.3s;
 }
 
 #signup {
     font-size: 16px;
     border-radius: 4px;
     margin-bottom: 10px;
-    padding: 10px;
-    width: 300px;
+    width: 280px;
     color: #fff;
     background-color:#708090;
     border-style: none;
     padding: 13px;
+}
+
+button {
+    cursor: pointer;
+}
+
+@media only screen and  (max-width: 480px) {
+    .welcome-message {
+        font-size: 2.5rem;
+        margin: 20px 0 0 0;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    #form > label {
+        font-size: 1rem;
+    }
+
+    #form > #id, #password, #login {
+        margin-bottom: 15px;
+        padding: 10px;
+        width: 280px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    #signup {
+        margin-bottom: 15px;
+        padding: 10px;
+        width: 280px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
 }

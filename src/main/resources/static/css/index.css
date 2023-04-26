@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Parisienne');
+@import url('https://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+
 *,
 *::before,
 *::after {
@@ -7,34 +11,259 @@
 }
 
 body {
-    background-image: url('../img/screen.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url(/img/plain.jpg);
+    font-family: 'Nanum Gothic';
     width: 100%;
-    height: 100%;
+}
+
+.logo {
+    text-decoration: none;
+}
+
+.welcome-message {
+    font-family: 'Parisienne';
+    font-size: 4rem;
+    font-weight: 900;
+    margin: 20px 0 0 30px;
+    color: #000;
 }
 
 .container {
     width: 100%;
-    height: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
 }
+
+.text-container {
+    display: inline-block;
+    text-align: left;
+    width: 730px;
+}
+
+.sub-message {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.sub-message2 {
+    font-size: 2rem;
+    margin: 20px 0 0 0;
+}
+
+hr {
+    border-top: 1px solid #000;
+    margin: 25px 0 0 0;
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: 900;
+    font-style: italic;
+    margin: 20px 0 0 0;
+    color: #808080;
+    width: 100%;
+}
+
+#type {
+    position: relative;
+    display: inline-block;
+}
+
+#type::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    margin: 0 0 0 5px;
+    width: 2px;
+    height: 100%;
+    background-color: #000;
+}
+
+#type.active::after {
+    display: none;
+}
+
+.get-started {
+    float: right;
+    text-decoration: none;
+    font-weight: 900;
+    border: 1.5px solid #000;
+    border-radius: 8px;
+    color: #000;
+    margin: 15px 0 0 0;
+    padding: 10px;
+}
+
+.get-started:hover {
+    background-color: #000;
+    color: #fff;
+    transition: 0.3s;
+}
+
+@media only screen and  (max-width: 1024px) {
+    .welcome-message {
+        font-size: 3rem;
+    }
+
+    .text-container {
+        width: 475px;
+    }
+
+    .sub-message {
+        font-size: 2rem;
+    }
+
+    .sub-message2 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+
+@media only screen and  (max-width: 600px) {
+    .welcome-message {
+        font-size: 2.5rem;
+    }
+
+    .text-container {
+        width: 365px;
+    }
+
+    .sub-message {
+        font-size: 1.5rem;
+    }
+
+    .sub-message2 {
+        font-size: 1rem;
+        margin: 10px 0 0 0;
+    }
+
+    hr {
+        margin: 15px 0 0 0;
+    }
+
+    p {
+        font-size: 0.5rem;
+        margin: 10px 0 0 0;
+    }
+
+    .get-started {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and  (max-width: 480px) {
+    .welcome-message {
+        font-size: 2.5rem;
+        margin: 20px 0 0 0;
+        text-align: center;
+    }
+
+    .text-container {
+        width: 300px;
+
+    }
+
+    .sub-message {
+        font-size: 1.5rem;
+    }
+
+    .sub-message2 {
+        font-size: 1.3rem;
+        margin: 15px 0 0 0;
+    }
+
+    hr {
+        margin: 20px 0 0 0;
+    }
+
+    p {
+        font-size: 1rem;
+        margin: 15px 0 0 0;
+    }
+}
+
+/*
 
 .text-container {
     position: absolute;
     top: 50%;
     left: 50%;
+    padding: 40px;
+    border-radius: 8px;
     transform: translate(-50%, -50%);
 }
 
+.icon {
+    display: inline-block;
+}
+
+.text {
+    display: inline-block;
+}
+
 .welcome-message {
-    text-align: center;
-    font-size: 2.5rem;
+    font-family: 'Parisienne';
+    font-size: 3.5rem;
+    margin: 20px 0 0 30px;
     margin-bottom: 0.5rem;
-    color: white;
+    font-weight: 500;
+}
+
+.sub-message {
+    font-size: 2.5rem;
+    font-weight: 900;
+    font-style: bold;
+    margin: 0 0 20px 0;
+}
+
+.sub-message2 {
+    font-size: 1.5rem;
+    font-weight: 100;
+    margin: 0 0 20px 0;
+}
+
+hr {
+    border: 0px;
+    border-top: 1.5px solid #000;
+}
+
+p {
+    margin: 20px 0 0 0;
+    font-size: 1.5rem;
+    font-weight: 900;
+    font-style: italic;
+}
+
+#type {
+    position: relative;
+    display: inline-block;
+}
+
+#type::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 2px;
+    height: 100%;
+    background-color: #000;
+}
+
+#type.active::after {
+    display: none;
 }
 
 .small-container {
-    text-align: center;
+    margin: 20px 0 0 0;
+    text-align: right;
 }
 
 a {
@@ -42,11 +271,20 @@ a {
     color: white;
 }
 
-.get-started {
+.login {
     display: inline-block;
-    text-align: center;
-    font-size: 1.5rem;
-    padding: 10px;
-    background-color: #6699cc;
-    border-radius: 30px;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 6px;
 }
+
+.login:hover {
+    background-color: #000;
+    color: #fff;
+    transition: 0.5s;
+}
+
+*/

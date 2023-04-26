@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +7,19 @@
 
     <link rel="stylesheet" href="/css/index.css">
 
-    <title>마이 엔딩 크레딧</title>
+    <title>Dear Myself,</title>
 </head>
 <body>
+
+<a href="" class="logo"><div class="welcome-message">Dear myself,</div></a>
 <div class="container">
     <div class="text-container">
-        <div class="welcome-message">친구들의 편지로<br>당신만의 엔딩 크레딧을 채워보세요!</div>
+        <div class="sub-message">나만의 추억을 기록하는 공간.</div>
+        <div class="sub-message2">원하는 종이 스타일과 글꼴을 골라 오늘을 기록하세요!</div>
+        <hr>
+        <p id="type"></p>
+        <!-- <a th:href="@{/user/login}"><div class="login">로그인</div></a> -->
+
         <!-- 로그인되어 있을 때 -->
         <div th:if="${loggedIn}">
             <div class="user-info">
@@ -20,21 +27,20 @@
                 <a th:href="@{/logout}"><div class="get-started">로그아웃</div></a>
                 <a th:href="@{/letter/write}"><div class="get-started">편지 작성</div></a>
                 <a th:href="@{/letter/letters}"><div class="get-started">편지 리스트</div></a>
-
             </div>
         </div>
 
         <!-- 로그인되어 있지 않을 때 -->
         <div th:if="${not loggedIn}">
             <div class="small-container">
-                <a th:href="@{/user/login}"><div class="get-started">로그인</div></a>
-                <a th:href="@{/user/signup}"><div class="get-started">회원가입</div></a>
-                <a th:href="@{/letter/write}"><div class="get-started">편지 작성</div></a>
+                <a th:href="@{/user/login}" class="get-started">시작하기</a>
             </div>
         </div>
             <!--            <a th:href="@{/post/{link}(link=${randomLink})}">내 글 보러가기</a>-->
         </div>
     </div>
 </div>
+
+<script src="/js/index.js"></script>
 </body>
 </html>

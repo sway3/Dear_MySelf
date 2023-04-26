@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Parisienne');
+@import url('https://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+
 *,
 *::before,
 *::after {
@@ -6,14 +9,24 @@
     box-sizing: border-box;
 }
 
-@font-face {
-    font-family: 'NanumSquareRound';
-    font-weight: normal;
-    font-style: normal;
+body {
+    background-image: url(/img/plain.jpg);
 }
 
 body, input, button {
-    font-family: 'GmarketSansMedium';
+    font-family: 'Nanum Gothic';
+}
+
+.logo {
+    text-decoration: none;
+}
+
+.welcome-message {
+    font-family: 'Parisienne';
+    font-size: 4rem;
+    font-weight: 900;
+    margin: 20px 0 0 30px;
+    color: #000;
 }
 
 .signup-container {
@@ -45,20 +58,32 @@ h1 {
 
 #form > #signup {
     font-size: 16px;
-    margin-top: 10px;
-    border-style: none;
-    border: 5px solid #5a5a5a;
+    font-weight: bold;
+    margin: 20px 0 0 0;
+    border: 1px solid #000;
     border-radius: 4px;
-    color: #fff;
-    background-color:#5C5CFF;
-    border-style: none;
+    color: #000;
+    background-color: #D3D3D3;
     padding: 13px;
 }
 
+#form > #signup:hover {
+    background-color: #000;
+    color: #fff;
+    transition: 0.3s;
+}
+
 #form > .pwd-container {
-    display: flex;
-    justify-content: space-between;
     font-size: 13px;
+}
+
+#form > .pwd-container p {
+    display: inline-block;
+}
+
+#form > .pwd-container > div {
+    display: inline-block;
+    float: right;
 }
 
 #showPass {
