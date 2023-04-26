@@ -11,43 +11,44 @@
     <link rel="stylesheet" href="/css/write.css">
 </head>
 <body>
-    <div class="letter-wrapper">
-        <form th:action="@{/letter}" th:object="${letterDto}" method="post">
-            <div class="stylebox">
-                <div class="paper_style">
-                    <select id="paper" name="paper" th:field="*{paper}" onchange="paperChange()">
-                        <option value="" selected disabled hidden>종이 선택</option>
-                        <option value="plain">Plain</option>
-                        <option value="cardboard">Cardboard</option>
-                        <option value="squared">Squared</option>
-                    </select>
-                </div>
-                <div class="font_style">
-                    <select id="font" name="font" th:field="*{font}">
-                        <option value="" selected disabled hidden>글꼴</option>
-                        <option value="serif">Serif</option>
-                        <option value="sans-serif">Sans-serif</option>
-                        <option value="monospace">Monospace</option>
-                    </select>
-                </div>
+<div class="letter-wrapper">
+    <form th:action="@{/letter}" th:object="${letterDto}" method="post">
+        <div class="stylebox">
+            <div class="paper_style">
+                <select id="paper" name="paper" th:field="*{paper}" onchange="paperChange()">
+                    <option value="" selected disabled hidden>종이 선택</option>
+                    <option value="plain">Plain</option>
+                    <option value="yellow">Yellow Paper</option>
+                    <option value="green">Green Board</option>
+                </select>
             </div>
-
-            <div class="titlebox">
-                <input type="text" id="title" name="title" th:field="*{title}" 
-                placeholder="제목을 입력하세요." />
+            <div class="font_style">
+                <select id="font" name="font" th:field="*{font}" onchange="fontChange()">
+                    <option value="" selected disabled hidden>글꼴</option>
+                    <option value="myeongjo">나눔명조</option>
+                    <option value="gothic">나눔고딕</option>
+                    <option value="notosans">Noto Sans</option>
+                </select>
             </div>
+        </div>
 
-            <hr>
+        <div class="titlebox">
+            <input type="text" id="title" name="title" th:field="*{title}"
+                   placeholder="제목을 입력하세요." />
+        </div>
 
-            <div class="contentbox">
+        <hr>
+
+        <div class="contentbox">
                 <textarea id="content" name="content" th:field="*{content}" rows="10"
-                placeholder="내용"></textarea>
-            </div>
-            
-            <button type="submit" class="submit">등록</button>
-        </form>
-    </div>
+                          placeholder="내용"></textarea>
+        </div>
 
-    <script src="/js/write.js"></script>
+        <button type="submit" class="submit">등록</button>
+    </form>
+    <a><button class="cancel">취소</button></a>
+</div>
+
+<script src="/js/write.js"></script>
 </body>
 </html>

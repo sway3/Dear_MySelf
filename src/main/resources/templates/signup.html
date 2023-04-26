@@ -12,42 +12,44 @@
 
 <body>
 
-<div class="signup-container">
-    <h1>회원가입</h1>
+    <a href="" class="logo"><div class="welcome-message">Dear myself,</div></a>
 
-    <form id="form" action="/user/signup" method="post" th:object="${memberDto}">
-        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+    <div class="signup-container">
+        <h1>회원가입</h1>
 
-        <label for="id">아이디</label>
-        <input type="text" id="id" th:field="*{email}" class="form-control"
-               placeholder="이메일을 입력하세요"
-               th:class="${#fields.hasErrors('email')}? 'form-control fieldError' : 'form-control'">
-        <p class="error" th:if="${#fields.hasErrors('email')}"
+        <form id="form" action="/user/signup" method="post" th:object="${memberDto}">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
 
-           th:errors="*{email}"></p>
-        <label for="password">비밀번호</label>
-        <input type="password" id="password" th:field="*{password}" class="form-control"
-               placeholder="비밀번호를 입력해주세요"
-               th:class="${#fields.hasErrors('password')}? 'form-control fieldError' : 'form-control'">
-        <div class="pwd-container">
-            <p class="error" th:if="${#fields.hasErrors('password')}"
-               th:errors="*{password}">Incorrect date</p>
-            <div>
-                <input type="checkbox" id="showPass" onclick="showPassword()"> 비밀번호 표시
+            <label for="id">아이디</label>
+            <input type="text" id="id" th:field="*{email}" class="form-control"
+                   placeholder="이메일을 입력하세요"
+                   th:class="${#fields.hasErrors('email')}? 'form-control fieldError' : 'form-control'">
+            <p class="error" th:if="${#fields.hasErrors('email')}"
+
+               th:errors="*{email}"></p>
+            <label for="password">비밀번호</label>
+            <input type="password" id="password" th:field="*{password}" class="form-control"
+                   placeholder="비밀번호를 입력해주세요"
+                   th:class="${#fields.hasErrors('password')}? 'form-control fieldError' : 'form-control'">
+            <div class="pwd-container">
+                <p class="error" th:if="${#fields.hasErrors('password')}"
+                   th:errors="*{password}">Incorrect date</p>
+                <div>
+                    <input type="checkbox" id="showPass" onclick="showPassword()"> 비밀번호 표시
+                </div>
             </div>
-        </div>
 
-        <label for="name">이름</label>
-        <input type="text" id="name" name="name" placeholder="이름">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" placeholder="이름">
 
-        <label for="phone">전화번호</label>
-        <input type="text" id="phone" name="phone_number" placeholder="01012345678">
+            <label for="phone">전화번호</label>
+            <input type="text" id="phone" name="phone_number" placeholder="01012345678">
 
-        <button type="submit" id="signup">가입하기</button>
-    </form>
-</div>
+            <button type="submit" id="signup">가입하기</button>
+        </form>
+    </div>
 
-<script src="/js/signup.js"></script>
+    <script src="/js/signup.js"></script>
 
 </body>
 </html>

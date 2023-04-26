@@ -18,7 +18,7 @@ logging:
     org.hibernate.sql: debug # hibernate가 생성하는 모든 sql이 log로 보인다.
     #    org.hibernate.type: trace  # p6spy를 사용하면 굳이 사용할 필요가 없다.
 server:
-  address: 127.0.0.4
+  address:
   compression:
     enabled: true
 #  port: 1234
