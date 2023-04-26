@@ -37,7 +37,7 @@ public class MemberController {
 //    @GetMapping("/")
 //    public String index() {
 //        return "/index";
-//    }
+//
     @GetMapping("/")
     public String home(Model model, HttpServletRequest request) {
         // 세션에서 사용자 정보를 가져옵니다.

@@ -5,10 +5,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 
 import javax.persistence.*;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,35 +14,32 @@ import java.util.List;
 @Getter
 @Entity
 @Slf4j
-
-@Table(name = "Rolling_paper_member")
-public class MemberEntity {
+@Table(name = "Rolling_Paper_member")
+public class Member {
     @Id
-    @GeneratedValue
-    @Column(name = "MemberId")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
-
-    @Column(length = 20, nullable = false)
+    @Column(length = 20)
     private String email;
 
-    @Column(length = 100, nullable = false)
+    @Column(length = 100)
     private String password;
 
     @Column(name = "user_name")
     private String name;
 
     @Column(name = "phone_number")
-    private String phone_number;
+    private String phoneNumber;
 
     @Builder
-    public MemberEntity(Long id, String email, String password, String name, String phone_number) {
-
-        this.id = id;
+    public Member(String email, String password, String name, String phoneNumber) {
         this.email = email;
         this.password = password;
         this.name = name;
-        this.phone_number = phone_number;
+        this.phoneNumber = phoneNumber;
     }
+
+
+
 }

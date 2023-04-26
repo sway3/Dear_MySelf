@@ -1,11 +1,9 @@
 package com.Yongjun.Rolling_paper.service;
 
-import com.Yongjun.Rolling_paper.domain.entity.LetterEntity;
-import com.Yongjun.Rolling_paper.domain.entity.MemberEntity;
+import com.Yongjun.Rolling_paper.domain.entity.Letter;
 import com.Yongjun.Rolling_paper.domain.repository.LetterRepository;
+import com.Yongjun.Rolling_paper.dto.LetterDto;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class LetterService {
@@ -16,7 +14,8 @@ public class LetterService {
     }
 
 
-    public LetterEntity save(LetterEntity letterEntity) {
-        return letterRepository.save(letterEntity);
+    public Letter save(LetterDto letterDto) {
+
+        return letterRepository.save(letterDto.toEntity());
     }
 }

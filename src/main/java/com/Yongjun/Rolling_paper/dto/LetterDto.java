@@ -1,6 +1,6 @@
 package com.Yongjun.Rolling_paper.dto;
 
-import com.Yongjun.Rolling_paper.domain.entity.LetterEntity;
+import com.Yongjun.Rolling_paper.domain.entity.Letter;
 import lombok.*;
 
 import javax.validation.constraints.NotEmpty;
@@ -10,7 +10,6 @@ import javax.validation.constraints.NotEmpty;
 @ToString
 @NoArgsConstructor
 public class LetterDto {
-    private Long id;
 
     @NotEmpty(message = "제목을 입력해주세요")
     private String title;
@@ -21,13 +20,13 @@ public class LetterDto {
 
     private String writer;
 
-    @Builder
-    public LetterDto(Long id, String content, String font, String paper, String title, String writer) {
-        this.id = id;
-        this.content = content;
-        this.font = font;
-        this.paper = paper;
-        this.title = title;
-        this.writer = writer;
+    public Letter toEntity() {
+        return Letter.builder()
+                .title(title)
+                .writer(writer)
+                .content(content)
+                .paper(paper)
+                .font(font)
+                .build();
     }
 }
