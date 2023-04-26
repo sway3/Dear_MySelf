@@ -32,6 +32,8 @@ public class Member {
     @Column(name = "phone_number")
     private String phoneNumber;
 
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Letter> letters = new ArrayList<>();
     @Builder
     public Member(String email, String password, String name, String phoneNumber) {
         this.email = email;

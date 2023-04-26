@@ -54,9 +54,11 @@ public class LetterController {
     public Letter getLetterById(@PathVariable Long id) {
         return letterRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Letter not found"));
     }
+
     @GetMapping("/letters")
-    public String getLetters(Model model) {
-        List<Letter> letters = letterRepository.findAll();
+    public String getLetters(Model model, Principal principal) {
+        Member member = memberRepository.findByEmail(principal.getName()).orElseThrow(() -> new EntityNotFoundException("Member not found"));
+        List<Letter> letters = letterRepository.findAllByMember(member);
         model.addAttribute("letters", letters);
         return "/letters";
     }

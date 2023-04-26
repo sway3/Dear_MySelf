@@ -73,7 +73,7 @@ public class MemberController {
         }
         memberService.joinUser(memberDto);
 
-        return "redirect:/";
+        return "redirect:/user/login";
     }
     // 로그아웃 처리
     @GetMapping("/logout")
