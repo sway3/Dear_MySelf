@@ -1,6 +1,7 @@
 package com.Yongjun.Rolling_paper.controller;
 
 import com.Yongjun.Rolling_paper.domain.entity.Letter;
+import com.Yongjun.Rolling_paper.domain.entity.Member;
 import com.Yongjun.Rolling_paper.domain.repository.LetterRepository;
 import com.Yongjun.Rolling_paper.domain.repository.MemberRepository;
 import com.Yongjun.Rolling_paper.dto.LetterDto;
@@ -43,6 +44,8 @@ public class LetterController {
 //        letterModel.setTitle(letterModel.getTitle());
         letterModel.setWriter(principal.getName());
 //        로그인을 하면 사용자의 이름을 가져오도록 한다.
+        Member member = memberRepository.findByEmail(principal.getName()).orElseThrow(() -> new EntityNotFoundException("Member not found"));
+        letterModel.setMember(member); // Member 정보를 넣어줌
         log.info(principal.getName());
         letterService.save(letterModel);
         return "redirect:/";

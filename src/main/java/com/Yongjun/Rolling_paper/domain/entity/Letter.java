@@ -27,13 +27,18 @@ public class Letter {
 
     private String writer;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "writer_id")
+    private Member member;
+
     @Builder
-    public Letter(String title, String content, String font, String paper, String writer) {
+    public Letter(String title, String content, String font, String paper, String writer, Member member) {
         this.title = title;
         this.content = content;
         this.font = font;
         this.paper = paper;
         this.writer = writer;
+        this.member = member;
     }
 
     // Getters and setters

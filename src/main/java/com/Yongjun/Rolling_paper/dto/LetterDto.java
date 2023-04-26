@@ -1,6 +1,7 @@
 package com.Yongjun.Rolling_paper.dto;
 
 import com.Yongjun.Rolling_paper.domain.entity.Letter;
+import com.Yongjun.Rolling_paper.domain.entity.Member;
 import lombok.*;
 
 import javax.validation.constraints.NotEmpty;
@@ -19,6 +20,7 @@ public class LetterDto {
     private String paper;
 
     private String writer;
+    private Member member;
 
     public Letter toEntity() {
         return Letter.builder()
@@ -27,6 +29,8 @@ public class LetterDto {
                 .content(content)
                 .paper(paper)
                 .font(font)
+                .member(member)
                 .build();
     }
+
 }
