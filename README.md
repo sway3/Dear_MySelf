@@ -30,4 +30,7 @@
 ![편지 작성 페이지](https://user-images.githubusercontent.com/104314593/234570889-7ce4378c-43d6-4895-b4dd-08ada9dc707e.png)
 ---
 ### 편지 조회 페이지
-이미지 넣어야 
+<img width="1512" alt="일기 리스트" src="https://user-images.githubusercontent.com/104314593/235299731-31196b09-00c9-44bc-aca8-de6a64c1383d.png">
+### 편지 상세 페이지
+<img width="1512" alt="토이 프로젝트 회고" src="https://user-images.githubusercontent.com/104314593/235299770-ae7dc86e-845c-417f-b7b0-4666a5c7c145.png">
+
