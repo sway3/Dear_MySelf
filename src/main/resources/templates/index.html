@@ -23,10 +23,10 @@
         <!-- 로그인되어 있을 때 -->
         <div th:if="${loggedIn}">
             <div class="user-info">
-                <span th:text="${username} + ' 님'"></span>
+                <div class="get-started" th:text="${username} + ' 님'"></div>
                 <a th:href="@{/logout}"><div class="get-started">로그아웃</div></a>
-                <a th:href="@{/letter/write}"><div class="get-started">편지 작성</div></a>
-                <a th:href="@{/letter/letters}"><div class="get-started">편지 리스트</div></a>
+                <a th:href="@{/letter/write}"><div class="get-started">일기 작성</div></a>
+                <a th:href="@{/letter/letters}"><div class="get-started">일기장 보기</div></a>
             </div>
         </div>
 

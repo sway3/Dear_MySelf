@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Parisienne');
+
+body {
+    font-family: 'Nanum Gothic';
+    background-image: url(/img/plain.jpg);
+    padding-bottom: 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.welcome-message {
+    font-family: 'Parisienne';
+    font-size: 4rem;
+    font-weight: 900;
+    color: #000;
+    margin: 20px 0 0 30px;
+}
+
+.book-container {
+    height: 100%;
+    margin: 0 auto;
+    max-width: 40rem;
+    padding: 70px 0 50px 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 0 0 40px 0;
+}
+
+.letter-container {
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin: 20px 0 0 0;
+    padding: 15px;
+}
+
+.letter-container > div {
+    width: fit-content;
+}
+
+.letter-container > .title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.letter-container > .content {
+    font-size: 1rem;
+    margin: 10px 0 0 0;
+    color: #5a5a5a;
+}
+
+.letter-container > .paper, .letter-container > .font {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .book-container {
+        max-width: 20rem;
+    }
+
+    .letter-container > .title {
+        font-size: 1.5rem;
+    }
+
+    .letter-container > .content {
+        margin: 6px 0 0 0;
+    }
+}
