@@ -1,30 +1,33 @@
 <!-- letters.html -->
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Letters</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/letters.css">
+
 </head>
 <body>
-<h1>Letters</h1>
-<table>
-  <thead>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th>Font</th>
-    <th>Paper</th>
-    <th>Writer</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr th:each="letter : ${letters}">
-    <td th:text="${letter.title}"></td>
-    <td th:text="${letter.content}"></td>
-    <td th:text="${letter.font}"></td>
-    <td th:text="${letter.paper}"></td>
-    <td th:text="${letter.writer}"></td>
-  </tr>
-  </tbody>
-</table>
+  <a th:href="@{/}" class="logo"><div class="welcome-message">Dear myself,</div></a>
+  <div class="book-container">
+    <h1>일기장</h1>
+    <a>
+      <div class="letter-container" th:each="letter : ${letters}">
+        <div class="title" th:text="${letter.title}"></div>
+        <div class="content" th:text="${letter.content}"></div>
+        <div class="paper" th:text="${letter.paper}"></div>
+        <div class="font" th:text="${letter.font}"></div>
+      </div>
+    </a>
+  </div>
+
+<!--      <td th:text="${letter.font}"></td>-->
+<!--      <td th:text="${letter.paper}"></td>-->
+<!--      <td th:text="${letter.writer}"></td>-->
+
+  <script src="/js/display.js"></script>
 </body>
 </html>

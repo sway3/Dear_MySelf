@@ -21,6 +21,7 @@ body {
 }
 
 .welcome-message {
+    display: inline-block;
     font-family: 'Parisienne';
     font-size: 4rem;
     font-weight: 900;
@@ -92,7 +93,7 @@ p {
     border: 1.5px solid #000;
     border-radius: 8px;
     color: #000;
-    margin: 15px 0 0 0;
+    margin: 20px 0 0 10px;
     padding: 10px;
 }
 
@@ -100,6 +101,11 @@ p {
     background-color: #000;
     color: #fff;
     transition: 0.3s;
+}
+
+.user-info > div:first-child {
+    margin: 20px 0 0 0;
+    float: left;
 }
 
 @media only screen and  (max-width: 1024px) {

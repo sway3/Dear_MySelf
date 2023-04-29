@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCCChassam.woff2');
+
+a {
+    text-decoration: none;
+}
+
+.welcome-message {
+    font-family: 'Parisienne';
+    font-size: 4rem;
+    font-weight: 900;
+    color: #000;
+    margin: 20px 0 0 30px;
+}
+
+.letter-container {
+    height: 100%;
+    margin: 0 auto;
+    max-width: 40rem;
+    padding: 70px 0 50px 0;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+hr {
+    margin: 20px 0 30px 0;
+}
