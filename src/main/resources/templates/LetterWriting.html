@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="letter-wrapper">
-    <form th:action="@{/letter}" th:object="${letterDto}" method="post">
+    <form name="letterForm" id="form" th:action="@{/letter}" th:object="${letterDto}" method="post">
         <div class="stylebox">
             <div class="paper_style">
                 <select id="paper" name="paper" th:field="*{paper}" onchange="paperChange()">
@@ -44,7 +44,7 @@
                           placeholder="내용"></textarea>
         </div>
 
-        <button type="submit" class="submit">등록</button>
+        <button type="submit" id="submit" class="submit">등록</button>
     </form>
     <a><button class="cancel">취소</button></a>
 </div>

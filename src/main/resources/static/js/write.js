@@ -47,3 +47,17 @@ function fontChange() {
             break;
     }
 }
+
+document.getElementById('form').addEventListener('submit', (event) => {
+
+    let paper = document.forms['letterForm']['name'].value;
+    let font = document.forms['letterForm']['font'].value;
+    let title = document.forms['letterForm']['title'].value;
+    let content = document.forms['letterForm']['content'].value;
+
+    if (paper == "" || font == "" || title == "" || content == "") {
+        event.preventDefault();
+        alert("글꼴, 종이, 제목, 내용을 모두 선택 또는 입력해주세요.");
+    }
+});
+

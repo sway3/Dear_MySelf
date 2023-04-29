@@ -9,16 +9,17 @@ body {
     padding-bottom: 50px;
 }
 
-a {
-    text-decoration: none;
-}
-
 .welcome-message {
     font-family: 'Parisienne';
     font-size: 4rem;
     font-weight: 900;
     color: #000;
     margin: 20px 0 0 30px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
 }
 
 .book-container {
@@ -39,6 +40,12 @@ h1 {
     border-radius: 10px;
     margin: 20px 0 0 0;
     padding: 15px;
+    opacity: 1;
+}
+
+.letter-container:hover {
+    background-color: #F8F8F8;
+    opacity: 0.5;
 }
 
 .letter-container > div {
