@@ -3,11 +3,13 @@ package com.Yongjun.Rolling_paper.domain.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
+
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Getter
 @Setter
-@Table(name = "Rolling_Paper_letter123")
+@Table(name = "Rolling_Paper_letter1234567")
 public class Letter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,8 +18,10 @@ public class Letter {
     @Column(nullable = false)
     private String title;
 
-    @Column(nullable = false, length = 10000)
+    @Column(nullable = false, length = 2000)
+    @Size(max = 2000)
     private String content;
+
 
     @Column(nullable = false)
     private String font;
