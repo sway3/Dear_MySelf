@@ -29,7 +29,7 @@ public class LetterController {
 
     @GetMapping("/write")
     public String createLetter(Model model, Principal principal) throws IOException {
-        if(principal == null) {
+        if (principal == null) {
             return "redirect:/login"; // 로그인 페이지로 돌려줌
         }
         model.addAttribute("letterDto", new LetterDto());
@@ -50,6 +50,7 @@ public class LetterController {
         letterService.save(letterModel);
         return "redirect:/";
     }
+
     @GetMapping("/{id}")
     public Letter getLetterById(@PathVariable Long id) {
         return letterRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Letter not found"));
@@ -63,6 +64,13 @@ public class LetterController {
         return "/letters";
     }
 
+
+    @GetMapping("/detail/{id}")
+    public String getDetails(Model model, @PathVariable Long id) {
+        Letter letter = letterRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Letter not found"));
+        model.addAttribute("letterEntity", letter);
+        return "/CurrentLetter";
+    }
 
 
     // Other controller methods for updating, deleting, and listing letters

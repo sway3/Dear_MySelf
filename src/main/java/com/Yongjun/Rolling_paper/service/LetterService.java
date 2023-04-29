@@ -10,12 +10,13 @@ public class LetterService {
     private final LetterRepository letterRepository;
 
     public LetterService(LetterRepository letterRepository) {
+
         this.letterRepository = letterRepository;
     }
 
 
     public Letter save(LetterDto letterDto) {
 
-        return letterRepository.save(letterDto.toEntity());
+        return letterRepository.save(letterDto. toEntity());
     }
 }

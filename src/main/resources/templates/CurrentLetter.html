@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,10 +9,10 @@
   <link rel="stylesheet" href="../static/css/currentLetter.css">
 </head>
 <body>
-  <div class="letter-container">
-    <h1>Title</h1>
-    <hr>
-    <div class="content">something</div>
-  </div>
+<div class="letter-container">
+  <h1 th:text="${letterEntity.title}">Title</h1>
+  <hr>
+  <div class="content" th:text="${letterEntity.content}">something</div>
+</div>
 </body>
 </html>
