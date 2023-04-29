@@ -31,6 +31,9 @@
 ---
 ### 편지 조회 페이지
 <img width="1512" alt="일기 리스트" src="https://user-images.githubusercontent.com/104314593/235299731-31196b09-00c9-44bc-aca8-de6a64c1383d.png">
+
+
+---
 ### 편지 상세 페이지
 <img width="1512" alt="토이 프로젝트 회고" src="https://user-images.githubusercontent.com/104314593/235299770-ae7dc86e-845c-417f-b7b0-4666a5c7c145.png">
 
