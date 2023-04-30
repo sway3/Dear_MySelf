@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="letter-wrapper">
-    <form name="letterForm" id="form" th:action="@{/letter}" th:object="${letterDto}" method="post">
+    <form name="letterForm" id="form" th:action="@{/letter/write}" th:object="${letterDto}" method="post">
         <div class="stylebox">
             <div class="paper_style">
                 <select id="paper" name="paper" th:field="*{paper}" onchange="paperChange()">
