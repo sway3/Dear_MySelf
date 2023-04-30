@@ -36,8 +36,8 @@ public class LetterController {
         return "/LetterWriting";
     }
 
-    @PostMapping
-    public String submitLetterForm(@ModelAttribute("letter") LetterDto letterModel, Principal principal) {
+    @PostMapping("/write")
+    public String submitLetterForm(@ModelAttribute LetterDto letterModel, Principal principal) {
 //        letterModel.setContent(letterModel.getContent());
 //        letterModel.setFont(letterModel.getFont());
 //        letterModel.setPaper(letterModel.getPaper());
